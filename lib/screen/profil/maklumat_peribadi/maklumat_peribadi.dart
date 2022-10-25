@@ -1,0 +1,1 @@
+export 'maklumat_peribadi_page.dart';

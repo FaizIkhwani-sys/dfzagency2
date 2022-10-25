@@ -1,0 +1,1 @@
+export 'lapor_kemalangan_page.dart';
