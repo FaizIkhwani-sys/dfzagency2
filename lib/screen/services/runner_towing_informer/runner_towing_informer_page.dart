@@ -9,10 +9,13 @@ class RunnerTowingInformer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppSecondaryBar(
-      title: 'Help-Line',
-      body: _Body(),
-      bottomNavigationBar: _BottomNavigationBar(),
+    return ChangeNotifierProvider(
+      create: (_) => LaporKemalanganState(),
+      child: const AppSecondaryBar(
+        title: 'Ask a Hand',
+        body: _Body(),
+        bottomNavigationBar: _BottomNavigationBar(),
+      ),
     );
   }
 }
@@ -43,7 +46,6 @@ class __BodyState extends State<_Body> {
               // const _PilihBencana(),
               const _Laporan(),
               const _PilihanTempat(),
-              const _PilihanBantuan(),
               Row(
                 mainAxisAlignment: AppSize.mainCenter,
                 crossAxisAlignment: AppSize.crossCenter,
@@ -53,6 +55,8 @@ class __BodyState extends State<_Body> {
                 ],
               ),
               if (state.pilihMethodAlamat == "1") const _AlamatBencana(),
+              const _PilihanBantuan(),
+
             ],
           ),
         ),
@@ -221,12 +225,12 @@ class _PilihanBantuan extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8),
           child: AppRadioButton(
             label: 'Pilih jenis ',
-            onChange: (v) => state.pilihMethodAlamat = v,
-            groupValue: state.pilihMethodAlamat,
+            onChange: (v) => state.pilihExtraHelp = v,
+            groupValue: state.pilihExtraHelp,
             radioList: [
               RadioListItem('1', 'Runner'),
               RadioListItem('2', 'Towing'),
-              RadioListItem('2', 'Informer'),
+              RadioListItem('3', 'Informer'),
             ],
             // errorText: state.pilihMethodAlamatError,
           ),
@@ -255,18 +259,21 @@ Future<void> _onSubmitted(BuildContext context) async {
   showDialog(
     context: context,
     builder: (_) {
-      return AppAlertDialog(
-        alertDialogType: AlertDialogType.success,
-        title: "Pemberitahuan",
-        subtitle: 'Terima kasih atas laporan bencana yang dihantar.',
-        description: "Tindakan akan segera diambil.",
-        actionButtons: [
-          ActionButton(
-            label: 'Kembali',
-            color: primaryColor,
-            onTap: () => AppRoute.pop(context),
-          ),
-        ],
+      return Material(
+        color: Colors.transparent,
+        child: AppAlertDialog(
+          alertDialogType: AlertDialogType.success,
+          title: "Pemberitahuan",
+          subtitle: 'Terima kasih atas laporan bencana yang dihantar.',
+          description: "Tindakan akan segera diambil.",
+          actionButtons: [
+            ActionButton(
+              label: 'Kembali',
+              color: primaryColor,
+              onTap: () => AppRoute.pop(context),
+            ),
+          ],
+        ),
       );
     },
   );

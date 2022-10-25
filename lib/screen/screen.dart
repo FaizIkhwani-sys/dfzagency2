@@ -4,3 +4,4 @@ export 'utama/utama.dart';
 export 'profil/profil.dart';
 export 'qr_scan/qr_scan.dart';
 export 'services/services.dart';
+export 'splash/splash.dart';

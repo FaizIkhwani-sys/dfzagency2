@@ -97,18 +97,21 @@ void _onTap(
   await showDialog(
     context: context,
     builder: (_) {
-      return AppAlertDialog(
-        alertDialogType: AlertDialogType.info,
-        title: programTitle,
-        subtitle: '',
-        description: description,
-        actionButtons: [
-          ActionButton(
-            label: 'Kembali',
-            color: secondaryColor,
-            onTap: () => AppRoute.pop(context),
-          ),
-        ],
+      return Material(
+        color: Colors.transparent,
+        child: AppAlertDialog(
+          alertDialogType: AlertDialogType.info,
+          title: programTitle,
+          subtitle: '',
+          description: description,
+          actionButtons: [
+            ActionButton(
+              label: 'Kembali',
+              color: secondaryColor,
+              onTap: () => AppRoute.pop(context),
+            ),
+          ],
+        ),
       );
     },
   );

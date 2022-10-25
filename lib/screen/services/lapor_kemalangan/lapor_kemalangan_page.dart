@@ -12,7 +12,7 @@ class LaporKemalanganPage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => LaporKemalanganState(),
       child: const AppSecondaryBar(
-        title: 'Help-Line',
+        title: 'Lapor Kemalangan',
         body: _Body(),
         bottomNavigationBar: _BottomNavigationBar(),
       ),
@@ -286,18 +286,21 @@ Future<void> _onSubmitted(BuildContext context) async {
   showDialog(
     context: context,
     builder: (_) {
-      return AppAlertDialog(
-        alertDialogType: AlertDialogType.success,
-        title: "Pemberitahuan",
-        subtitle: 'Terima kasih atas laporan bencana yang dihantar.',
-        description: "Tindakan akan segera diambil.",
-        actionButtons: [
-          ActionButton(
-            label: 'Kembali',
-            color: primaryColor,
-            onTap: () => AppRoute.pop(context),
-          ),
-        ],
+      return Material(
+        color: Colors.transparent,
+        child: AppAlertDialog(
+          alertDialogType: AlertDialogType.success,
+          title: "Pemberitahuan",
+          subtitle: 'Terima kasih atas laporan bencana yang dihantar.',
+          description: "Tindakan akan segera diambil.",
+          actionButtons: [
+            ActionButton(
+              label: 'Kembali',
+              color: primaryColor,
+              onTap: () => AppRoute.pop(context),
+            ),
+          ],
+        ),
       );
     },
   );

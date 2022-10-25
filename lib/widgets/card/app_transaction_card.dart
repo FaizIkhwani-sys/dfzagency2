@@ -6,12 +6,14 @@ class AppTransactionCard extends StatelessWidget {
   final String id;
   final String dateTime;
   final String? status;
+  final String? title;
   final VoidCallback? onTap;
 
   AppTransactionCard({
     required this.id,
     required this.dateTime,
     this.status,
+    this.title,
     this.onTap
 
   });
@@ -24,7 +26,7 @@ class AppTransactionCard extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         margin: EdgeInsets.only(bottom: 8.0),
         decoration: BoxDecoration(
-          color: primaryColor,
+          color: status=='0' ?primaryColor:status=='1' ? Colors.amber : Colors.green,
           borderRadius: BorderRadius.circular(15.0),
         ),
         child: Row(
@@ -41,6 +43,14 @@ class AppTransactionCard extends StatelessWidget {
                       color: secondaryColor,
                     ),
                   ),
+                  Text(
+                    title! ,
+                    style: TextStyle(
+                      color: secondaryColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16
+                    ),
+                  ),
                   SizedBox(height: 5.0),
                   Text(
                     dateTime.toLowerCase() ,
@@ -51,7 +61,12 @@ class AppTransactionCard extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(Icons.info, size: 15, color: Colors.black,),
+            if (status =='0')
+            Icon(Icons.warning_amber, size: 20, color: Colors.black,),
+            if (status =='1')
+            Icon(Icons.handyman_rounded, size: 20, color: Colors.black,),
+            if (status =='2')
+            Icon(Icons.done, size: 20, color: Colors.black,),
           ],
         ),
       ),

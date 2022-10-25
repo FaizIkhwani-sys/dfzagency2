@@ -30,15 +30,23 @@ class _Body extends StatelessWidget {
         AppMenuTileCard(
           title: "Runner/Towing/Informer",
           onTap: () => {
-            // AppRoute.push(context, const AduanRakyatPage())
+            AppRoute.push(context, const RunnerTowingInformer())
           },
           icon: Icons.feedback,
           iconColor: Colors.black,
         ),
         AppMenuTileCard(
-          title: "Temujanji",
+          title: "Status Repair",
           onTap: () => {
-            // AppRoute.push(context, const TemujanjiPage())
+            AppRoute.push(context, const StatusRepairPage())
+          },
+          icon: Icons.task,
+          iconColor: Colors.black,
+        ),
+        AppMenuTileCard(
+          title: "Status Kemalangan",
+          onTap: () => {
+            AppRoute.push(context, const StatusKemalanganPage())
           },
           icon: Icons.task,
           iconColor: Colors.black,

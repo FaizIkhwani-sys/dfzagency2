@@ -88,7 +88,7 @@ class _AppState extends State<App> {
         themeMode: ThemeMode.light,
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
-        home:  const HomePage(),
+        home:  const SplashPage(),
         //  home: const HomePage(),
 
     );
