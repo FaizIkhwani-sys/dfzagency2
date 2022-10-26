@@ -41,6 +41,7 @@ dependencies:
   geolocator: ^9.0.1
   permission_handler: 10.0.0
   im_stepper: ^1.0.1+1
+  webview_flutter:
 
 
 dev_dependencies:
@@ -55,6 +56,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
+    - assets/productdfz/
 
   fonts:
     - family: Manrope

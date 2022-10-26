@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dfzagency/dfz.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -38,9 +39,7 @@ class _BodyState extends State<_Body> {
           body: const _Content(),
           actions: [
             InkWell(
-              onTap: () {
-                // AppRoute.push(context, CartPage());
-              },
+              onTap: () => {AppRoute.push(context, KedaiWebviewPage())},
               child: const Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
                 child: Icon(

@@ -90,22 +90,34 @@ class _ProductListItems extends StatelessWidget {
                   child: Row(
                     children: [
                       ProductCard(
-                          title: 'Tamar Cocoa',
+                          title: 'KYT NFJ RADAR BLUE',
                           price: 'RMXX.XX',
-                          image: 'assets/images/tamar_coco.jpg',
-                          onTap: () => {}),
+                          image: 'assets/productdfz/h1.jpg',
+                          onTap: () => {AppRoute.push(context, KedaiWebviewPage())}),
                       _SizedBoxWidth30(),
                       ProductCard(
-                          title: 'Mee Kari Aminah',
+                          title: 'MHR BEATZ F20M GOLD WORLD CHAMPION (limited edition)',
                           price: 'RMXX.XX',
-                          image: 'assets/images/maggie.jpg',
-                          onTap: () => {}),
+                          image: 'assets/productdfz/h2.jpg',
+                          onTap: () => {AppRoute.push(context, KedaiWebviewPage())}),
                       _SizedBoxWidth30(),
                       ProductCard(
-                          title: 'Aminah Sardin',
+                          title: 'HYPERTECH CNC PRO – R2 ARM Y15 (SILVER)',
                           price: 'RMXX.XX',
-                          image: 'assets/images/saden.jpeg',
-                          onTap: () => {}),
+                          image: 'assets/productdfz/h3.jpg',
+                          onTap: () => {AppRoute.push(context, KedaiWebviewPage())}),
+                      _SizedBoxWidth30(),
+                      ProductCard(
+                          title: 'RAPIDO EX – PIPE S/STEEL STD',
+                          price: 'RMXX.XX',
+                          image: 'assets/productdfz/h4.jpg',
+                          onTap: () => {AppRoute.push(context, KedaiWebviewPage())}),
+                      _SizedBoxWidth30(),
+                      ProductCard(
+                          title: 'HPSP FRONT FORK Y15 & Y16',
+                          price: 'RMXX.XX',
+                          image: 'assets/productdfz/h5.jpg',
+                          onTap: () => {AppRoute.push(context, KedaiWebviewPage())}),
                     ],
                   ),
                 ))
@@ -296,11 +308,12 @@ class _CarouselSlideShow extends StatelessWidget {
           enableInfiniteScroll: false,
         ),
         items: const [
-          SliderImage(image: 'assets/images/banner_alhaddad.jpg'),
-          SliderImage(image: 'assets/images/banner_alhaddad2.jpg'),
-          SliderImage(image: 'assets/images/banner_alhaddad3.jpg'),
-          SliderImage(image: 'assets/images/banner_alhaddad4.jpg'),
-          SliderImage(image: 'assets/images/banner_alhaddad5.jpg'),
+          SliderImage(image: 'assets/productdfz/p1.png'),
+          SliderImage(image: 'assets/productdfz/p2.jpg'),
+          SliderImage(image: 'assets/productdfz/p3.jpg'),
+          SliderImage(image: 'assets/productdfz/p4.png'),
+          SliderImage(image: 'assets/productdfz/p5.jpg'),
+          SliderImage(image: 'assets/productdfz/p6.jpg'),
         ]);
   }
 }
